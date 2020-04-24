@@ -1,0 +1,53 @@
+{
+	"name": "DestinationDataset_tqn",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "devVeit",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "firstname",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "lastname",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "createddt",
+				"type": "date",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "modifieddt",
+				"type": "date",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "imported",
+				"type": "tinyint",
+				"precision": 3,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "test2"
+		}
+	}
+}

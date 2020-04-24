@@ -1,0 +1,124 @@
+{
+	"name": "CopyPipeline_tqn",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_tqn",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.test1"
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.test2"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"additionalColumns": [
+							{
+								"name": "imported",
+								"value": "1"
+							}
+						],
+						"queryTimeout": "00:01:00",
+						"isolationLevel": "ReadCommitted"
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "id",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "firstname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "firstname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "lastname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "lastname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createddt",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "createddt",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "modifieddt",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "modifieddt",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "imported",
+									"type": "String"
+								},
+								"sink": {
+									"name": "imported",
+									"type": "Byte"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_tqn",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_tqn",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
