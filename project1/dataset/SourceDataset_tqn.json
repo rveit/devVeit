@@ -1,0 +1,16 @@
+{
+	"name": "SourceDataset_tqn",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "devVeit",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "test1"
+		}
+	}
+}
