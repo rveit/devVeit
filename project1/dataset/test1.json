@@ -1,0 +1,39 @@
+{
+	"name": "test1",
+	"properties": {
+		"description": "Stored in devVeit.",
+		"linkedServiceName": {
+			"referenceName": "devVeit",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "firstname",
+				"type": "varchar"
+			},
+			{
+				"name": "lastname",
+				"type": "varchar"
+			},
+			{
+				"name": "createddt",
+				"type": "date"
+			},
+			{
+				"name": "modifieddt",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "test1"
+		}
+	}
+}
